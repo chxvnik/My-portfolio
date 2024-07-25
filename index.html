@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport=">
+    <link rel="stylesheet" href="NewStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2a50711d43.js" crossorigin="anonymous"></script>
+    <title>My portfolio</title>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#languages">Programming Languages</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text"></div>
+            <p>NATIN Student</p>
+            <h1>Hello, my name is <br><span>Didier</span> Cyrus</h1>
+            <img src="images/me.png" class="me">
+        </div>
+    </div>
+<!---------about--------->
+    <div id="about">
+        <div class="conta">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" class="user">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>I am an 18 year old student that is enrolled into NATIN-MBO,<br>
+                        I typically work on hardware, make music in my free time <br>
+                        or make logo designs for groups I am<br>
+                        Affiliated with. <br>
+                        I have no current set goals in life, other than<br>
+                        seeking wisdom in modern technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!----languages---->
+<div id="languages">
+    <div class="container">
+        <h1 class="sub-title">Languages</h1>
+        <div class="languages-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>HTML</h2>
+                <p>HTML is a standard language used to build websites.</p>
+                <a href="https://en.wikipedia.org/wiki/HTML">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>CSS</h2>
+                <p>When an HTML is set, it is decorated with CSS coding to make it more user friendly.</p>
+                <a href="https://en.wikipedia.org/wiki/CSS">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Javascript</h2>
+                <p>In most websites, Javascript is used for a variety of things, such as calculators or even effects.</p>
+                <a href="https://en.wikipedia.org/wiki/JavaScript">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!----portfolio---->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/Angles.png">
+                <h3>
+                    A little logo I made for a military-simulation group.
+                    Made in Canva (thank you Mr. Noordwijk).
+                </h3>
+            </div>
+            <div class="work">
+                <img src="images/soundtrack.png">
+                <h3>
+                    A soundtrack I made for a friend's game. 
+                    Made in FL Studio 21 (My greater strength).<br>
+                    <audio controls>
+                        <br>
+                        <source src="tired (b-side).wav" type="audio/wav">
+                      </audio>
+                </h3>
+            </div>
+            <div class="work">
+                <img src="images/nightmare.png">
+                <h3>
+                    This pain-staking website.<br>
+                    Made in VSC.
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!----contact---->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>didier.cyrus@student.natin.sr</p>
+            <p>853-7738</p>
+            </div>
+        <div class="contact-right"></div>
+            <form name="'submit-to-google-sheet">
+               <input type="text" name="Name" placeholder="Your Name" required>
+               <input type="email" name="Email" placeholder="Your Email" required>
+               <textarea type="message" rows="6" placeholder="Your Message" required></textarea>
+               <button type="submit" class="btn">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+</div>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxlfxDQKpzhA5pbWi6itXITPHlJ58IrU5kNA3B-6oW_nIP_yCTNw897_5jlH_PwbCi1/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
